@@ -47,7 +47,7 @@
 	}];
 
 	import manifest from '$lib/manifest.json';
-	const games = Object.values(manifest);
+	const games = [...Object.values(manifest)].filter(x => !x.version.startsWith('0'));
 </script>
 
 <h1>QR Games Studio</h1>
