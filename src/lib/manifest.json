@@ -68,7 +68,7 @@
   "id": "qrs.sts",
   "secret": null,
   "version": "1.0",
-  "url": "https://qrpr.eu/html#RD{game_id}",
+  "url": "https://qrpr.eu/html#RDqrs.sts",
   "qr": false
  },
  "qrs.tictactoe": {
