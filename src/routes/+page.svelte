@@ -35,6 +35,10 @@
 				padding-left: 0;
 			}
 	}
+	a {
+		color: #0cc;
+			text-decoration: none;
+	}
 </style>
 
 <script>
@@ -54,7 +58,7 @@
 
 <h1>QR Games Studio</h1>
 
-<p>Creating open-source games that fit into a single QR code</p>
+<p>Creating <a href="https://github.com/QRGameStudio/">open-source</a> games that fit into a single QR code</p>
 
 <h2>Team</h2>
 <ul>
@@ -72,7 +76,7 @@
 	<ul>
 		{#each qrGames as game}
 			<li>
-				{game.name} (v{game.version}) <a href="{game.url}">[play]</a>
+				{game.name} (v{game.version}) <a href="{game.url}">[play]</a> <a target="_blank" href="https://games.qrpr.eu/{game.id}.png">[qr]</a>
 			</li>
 		{/each}
 	</ul>
