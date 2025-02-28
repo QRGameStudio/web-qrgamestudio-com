@@ -48,6 +48,8 @@
 
 	import manifest from '$lib/manifest.json';
 	const games = [...Object.values(manifest)].filter(x => !x.version.startsWith('0'));
+	const qrGames = games.filter(x => x.qr);
+	const largerGames = games.filter(x => !x.qr);
 </script>
 
 <h1>QR Games Studio</h1>
@@ -65,11 +67,25 @@
 	{/each}
 </ul>
 
-<h2>Games</h2>
-<ul>
-	{#each games as game}
-		<li>
-			{game.name} (v{game.version}) <a href="{game.url}">[play]</a>
-		</li>
-	{/each}
-</ul>
+{#if qrGames}
+	<h2>QR Games</h2>
+	<ul>
+		{#each qrGames as game}
+			<li>
+				{game.name} (v{game.version}) <a href="{game.url}">[play]</a>
+			</li>
+		{/each}
+	</ul>
+{/if}
+
+{#if qrGames}
+	<h2>Larger Games</h2>
+	<p><i>These games do not fit inside a QR code</i></p>
+	<ul>
+		{#each largerGames as game}
+			<li>
+				{game.name} (v{game.version}) <a href="{game.url}">[play]</a>
+			</li>
+		{/each}
+	</ul>
+{/if}
